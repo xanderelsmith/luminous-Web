@@ -12,12 +12,28 @@
   --glass-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.05);
 }
 
+/* =========================
+   Base
+========================= */
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
+  width: 100%;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1,
@@ -48,17 +64,23 @@ h6,
 
 @keyframes float {
   0% {
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg)
+    transform: perspective(1000px)
+      rotateY(-5deg)
+      rotateX(5deg)
       translateY(0);
   }
 
   50% {
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg)
+    transform: perspective(1000px)
+      rotateY(-5deg)
+      rotateX(5deg)
       translateY(-15px);
   }
 
   100% {
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg)
+    transform: perspective(1000px)
+      rotateY(-5deg)
+      rotateX(5deg)
       translateY(0);
   }
 }
@@ -94,6 +116,7 @@ h6,
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1030;
   padding: 1rem 0;
@@ -119,6 +142,7 @@ h6,
   margin-right: 12px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+  object-fit: contain;
 }
 
 .nav-link {
@@ -134,6 +158,11 @@ h6,
 
 .navbar-toggler {
   border: none;
+  padding: 0.4rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .navbar-toggler-icon {
@@ -225,6 +254,8 @@ h6,
 ========================= */
 
 .hero-img-glass {
+  width: 100%;
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -235,16 +266,21 @@ h6,
   transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
   transition: transform 0.5s ease;
   animation: float 6s ease-in-out infinite;
+  box-sizing: border-box;
 }
 
 .hero-img-glass:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg)
+  transform: perspective(1000px)
+    rotateY(0deg)
+    rotateX(0deg)
     translateY(-5px);
   animation-play-state: paused;
 }
 
 .hero-img {
+  width: 100%;
   max-width: 100%;
+  height: auto;
   border-radius: 12px;
   display: block;
 }
@@ -302,6 +338,8 @@ h6,
 
 .feature-img-wrapper {
   position: relative;
+  width: 100%;
+  max-width: 100%;
   border-radius: 20px;
   padding: 12px;
   background: rgba(255, 255, 255, 0.6);
@@ -323,6 +361,8 @@ h6,
   border-radius: 12px;
   display: block;
   width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .left-align {
@@ -330,7 +370,9 @@ h6,
 }
 
 .left-align:hover {
-  transform: perspective(1000px) rotateY(0deg) translateY(-8px);
+  transform: perspective(1000px)
+    rotateY(0deg)
+    translateY(-8px);
 }
 
 .right-align {
@@ -338,7 +380,9 @@ h6,
 }
 
 .right-align:hover {
-  transform: perspective(1000px) rotateY(0deg) translateY(-8px);
+  transform: perspective(1000px)
+    rotateY(0deg)
+    translateY(-8px);
 }
 
 /* =========================
@@ -353,6 +397,9 @@ h6,
 }
 
 .dual-images .main-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
@@ -362,6 +409,7 @@ h6,
   bottom: -30px;
   right: -30px;
   width: 60%;
+  max-width: 60%;
   border-radius: 12px;
   box-shadow: 0 25px 50px rgba(14, 165, 233, 0.25);
   border: 4px solid #fff;
@@ -378,19 +426,27 @@ h6,
 
 .demo-section {
   background: #fff;
+  overflow: hidden;
 }
+
+/*
+   IMPORTANT:
+   Use aspect-ratio only.
+   Do NOT combine it with padding-top
+   or height: 0.
+*/
 
 .demo-video-wrapper {
   position: relative;
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 9;
-  padding-top: 56.25%;
-  height: 0;
   overflow: hidden;
   border-radius: 24px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
   border: 4px solid #fff;
+  box-sizing: border-box;
+  background: #000;
 }
 
 .demo-video-wrapper iframe,
@@ -398,8 +454,7 @@ h6,
 .demo-video-wrapper object,
 .demo-video-wrapper .ratio {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
@@ -409,9 +464,6 @@ h6,
 @media (min-width: 992px) {
   .demo-video-wrapper {
     max-height: 700px;
-    aspect-ratio: 16 / 9;
-    padding-top: 0;
-    height: auto;
   }
 }
 
@@ -424,6 +476,7 @@ h6,
   background: var(--bg-color);
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .glass-card {
@@ -522,6 +575,8 @@ h6,
   border: 1px solid #e2e8f0;
   background: #f8fafc;
   transition: all 0.2s;
+  width: 100%;
+  max-width: 100%;
 }
 
 .input-custom:focus {
@@ -540,4 +595,284 @@ h6,
   font-weight: 500;
   text-align: center;
   padding: 20px 0;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+  /* =========================
+     Navbar
+  ========================= */
+
+  .glass-nav {
+    padding: 0.75rem 0;
+  }
+
+  .brand-text {
+    font-size: 1.4rem;
+  }
+
+  .navbar-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  /* =========================
+     Hero
+  ========================= */
+
+  .hero {
+    padding-top: 80px !important;
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    width: 100%;
+    height: 60%;
+    left: -30%;
+  }
+
+  .hero-content-container {
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Remove 3D transformation on phones */
+  .hero-img-glass {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 30px auto 0;
+    transform: none;
+    animation: none;
+    border-radius: 18px;
+  }
+
+  .hero-img-glass:hover {
+    transform: none;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* =========================
+     Buttons
+  ========================= */
+
+  .btn-luminous,
+  .btn-luminous-custom {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* =========================
+     Demo Section
+  ========================= */
+
+  .demo-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /*
+     Clean 16:9 mobile video.
+     No padding-top.
+     No height: 0.
+  */
+
+  .demo-video-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    max-height: none;
+    border-radius: 16px;
+    border-width: 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .demo-video-wrapper iframe,
+  .demo-video-wrapper embed,
+  .demo-video-wrapper object,
+  .demo-video-wrapper .ratio {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* =========================
+     Features
+  ========================= */
+
+  .feature-row {
+    margin-bottom: 60px;
+  }
+
+  .feature-heading {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .feature-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .feature-text-left,
+  .feature-text-right {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .feature-img-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+    transform: none;
+  }
+
+  .feature-img-wrapper:hover {
+    transform: translateY(-5px);
+  }
+
+  .left-align,
+  .right-align {
+    transform: none;
+  }
+
+  .left-align:hover,
+  .right-align:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* =========================
+     Dual Images
+  ========================= */
+
+  .dual-images .main-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dual-images .overlay-img {
+    right: -10px;
+    bottom: -20px;
+    width: 55%;
+    max-width: 55%;
+  }
+
+  /* =========================
+     CTA
+  ========================= */
+
+  .cta-section {
+    padding: 60px 20px;
+    width: 100%;
+  }
+
+  .glass-card {
+    padding: 40px 24px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glass-card h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* =========================
+     Modal
+  ========================= */
+
+  .glass-modal {
+    padding: 30px 20px;
+    width: calc(100% - 40px);
+    max-width: 450px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .brand-text {
+    font-size: 1.3rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .feature-heading {
+    font-size: 1.6rem;
+  }
+
+  .glass-card {
+    padding: 35px 20px;
+  }
+
+  .glass-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .glass-card p {
+    font-size: 1rem;
+  }
 }
