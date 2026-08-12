@@ -294,8 +294,7 @@ h1, h2, h3, h4, h5, h6, .brand-text {
   .demo-video-wrapper .ratio {
     width: 200%;
     height: 200%;
-    transform: scale(0.5);
-    transform-origin: top left;
+    zoom: 0.5;
   }
 }
 
