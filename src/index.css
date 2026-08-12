@@ -9,11 +9,7 @@
   --text-muted: #64748b;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.05);
-}
-
-body {
-  font-family: 'Inter', sans-serif;
+  --glass-shadow: 0 8px 32px 0 rgba(14,  sans-serif;
   background-color: var(--bg-color);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
@@ -46,13 +42,7 @@ h1, h2, h3, h4, h5, h6, .brand-text {
 
 /* Glassmorphism Navbar */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-  position: fixed;
-  top: 0;
+  background top: 0;
   width: 100%;
   z-index: 1030;
   padding: 1rem 0;
@@ -143,12 +133,18 @@ h1, h2, h3, h4, h5, h6, .brand-text {
   padding: 0.8rem 2.5rem;
   font-weight: 600;
   font-size: 1.1rem;
- px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-luminous:hover, .btn-luminous-custom:hover {
-  transform: translateY rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
+  color: #fff;
+}
+
+.hero-img-glass {
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.8);
@@ -196,12 +192,7 @@ h1, h2, h3, h4, h5, h6, .brand-text {
 .feature-heading {
   color: var(--text-dark);
   font-size: 2.2rem;
-  letter-spacing: -0.5px;
-  margin-bottom: 1.2rem;
-}
-
-.feature-description {
-  color: var(--text-muted);
+  letter-spacing: -0.  color: var(--text-muted);
   font-size: 1.15rem;
   line-height: 1.7;
 }
@@ -219,7 +210,7 @@ h1, h2, h3, h4, h5, h6, .brand-text {
   padding: 12px;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(14, 165, 233, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 25px 50px -12 0.15);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -318,8 +309,7 @@ h1, h2, h3, h4, h5, h6, .brand-text {
 
 /* CTA Section */
 .cta-section {
-  padding: 80px 20px;
-  background: var(--bg-color);
+  padding: 80px 20(--bg-color);
   display: flex;
   justify-content: center;
 }
@@ -358,24 +348,7 @@ h1, h2, h3, h4, h5, h6, .brand-text {
   align-items: center;
   justify-content: center;
   z-index: 1050;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-.modal-custom.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.glass-modal {
-  background: #fff;
-  border-radius: 24px;
-  padding: 40px;
-  max-width: 450px;
-  width: 90%;
-  position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  opacity:25px 50px -12px rgba(0,0,0,0.25);
   transform: translateY(20px);
   transition: transform 0.3s ease;
 }
