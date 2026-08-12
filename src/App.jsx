@@ -162,10 +162,10 @@ function App() {
             <h2 className="fw-bold text-center mb-4 section-title">Watch Our Demo</h2>
             <div className="demo-video-wrapper shadow-lg rounded">
               <div className="ratio ratio-16x9">
-                <iframe src="https://drive.google.com/file/d/1sVXWgrxZxF2pmZlX-qzQyLAV0iqPyGZO/preview"
-                        title="Luminous EHR Demo"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1HF1nU0si4fFQr5x7mI2hM3s_VxX8jpB2/preview"
+                  title="Luminous EHR Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen></iframe>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ function App() {
       <footer className="footer">
         <div className="container d-flex justify-content-between align-items-center">
           <div className="footer-brand d-flex align-items-center">
-            <img src="/assets/appicon.png" alt="Icon" width="24" height="24" className="me-2" style={{opacity: 0.8}}/>
+            <img src="/assets/appicon.png" alt="Icon" width="24" height="24" className="me-2" style={{ opacity: 0.8 }} />
             Luminous EHR
           </div>
           <div className="footer-copyright">&copy; 2024. All rights reserved.</div>
@@ -197,7 +197,7 @@ function App() {
         <div className="modal-custom show" onClick={(e) => e.target.classList.contains('modal-custom') && closeModal()}>
           <div className="modal-content-custom glass-modal">
             <span className="close-modal" onClick={closeModal}>&times;</span>
-            
+
             {!isSubmitted ? (
               <>
                 <h4 className="fw-bold mb-3 text-center pe-4">Join the Waitlist</h4>
