@@ -143,18 +143,12 @@ h1, h2, h3, h4, h5, h6, .brand-text {
   padding: 0.8rem 2.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+ px rgba(14, 165, 233, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-luminous:hover, .btn-luminous-custom:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
-  color: #fff;
-}
-
-.hero-img-glass {
-  background: rgba(255, 255, 255, 0.4);
+  transform: translateY rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.8);
@@ -281,25 +275,45 @@ h1, h2, h3, h4, h5, h6, .brand-text {
 .demo-section {
   background: #fff;
 }
-/ Responsive demo/video iframe — modern + fallback /
+
+/* Demo Video — responsive iframe (modern + fallback) */
 .demo-video-wrapper {
- position: relative;
- width: 100%;
- max-width: 100%;
- / modern browsers /
- aspect-ratio: 16 / 9;
- / fallback for older browsers /
- padding-top: 56.25%; / 16:9 /
- height: 0;
- }
-/ Keep a nice max height on large viewports /
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  /* modern browsers */
+  aspect-ratio: 16 / 9;
+  /* fallback for older browsers */
+  padding-top: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1) !important;
+  border: 4px solid #fff;
+}
+
+/* Make iframe (or bootstrap .ratio child) fill the wrapper */
+.demo-video-wrapper iframe,
+.demo-video-wrapper embed,
+.demo-video-wrapper object,
+.demo-video-wrapper .ratio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Keep a nice max height on large viewports */
 @media (min-width: 992px) {
- .demo-video-wrapper {
- max-height: 700px;
- aspect-ratio: 16 / 9;
- padding-top: 0; / modern browsers will use aspect-ratio /
- height: auto;
- }
+  .demo-video-wrapper {
+    max-height: 700px;
+    aspect-ratio: 16 / 9;
+    padding-top: 0; /* modern browsers will use aspect-ratio */
+    height: auto;
+  }
 }
 
 /* CTA Section */
