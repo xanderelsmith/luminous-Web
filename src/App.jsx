@@ -5,6 +5,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
   const wrapperRef = useRef(null);
 
@@ -142,12 +143,24 @@ function App() {
                   <i className="bi bi-x-lg fs-5"></i>
                 </button>
               )}
+              {!isPlaying && (
+                <button 
+                  onClick={() => videoRef.current?.play()}
+                  className="custom-play-btn"
+                  aria-label="Play Video"
+                >
+                  <i className="bi bi-play-fill"></i>
+                </button>
+              )}
               <video 
                 ref={videoRef}
                 controls 
                 playsInline 
                 loop 
                 preload="none"
+                poster="/assets/thumbnail.png"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
                 className="w-100"
               >
                 Your browser does not support the video tag.
