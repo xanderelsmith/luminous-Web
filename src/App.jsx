@@ -4,7 +4,17 @@ import './index.css';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   useEffect(() => {
     const currentVideo = videoRef.current;
@@ -29,6 +39,32 @@ function App() {
       observer.unobserve(currentVideo);
     };
   }, []);
+
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      if (wrapperRef.current) {
+        wrapperRef.current.requestFullscreen().catch(err => {
+          console.error(`Error enabling fullscreen: ${err.message}`);
+        });
+      }
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
+  const togglePiP = async () => {
+    if (videoRef.current) {
+      try {
+        if (document.pictureInPictureElement) {
+          await document.exitPictureInPicture();
+        } else {
+          await videoRef.current.requestPictureInPicture();
+        }
+      } catch (err) {
+        console.error(`Error with PiP: ${err.message}`);
+      }
+    }
+  };
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
@@ -85,6 +121,45 @@ function App() {
               <div className="hero-img-glass">
                 <img src="/assets/image2.png" className="hero-img" alt="Luminous EHR dashboard screenshot" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Video Section */}
+      <section id="demo" className="py-5 demo-section">
+        <div className="container-fluid px-4 d-flex justify-content-center">
+          <div style={{ maxWidth: '800px', width: '100%' }}>
+            <h2 className="fw-bold text-center mb-4 section-title">Watch Our Demo</h2>
+            <div ref={wrapperRef} className="demo-video-wrapper shadow-lg rounded">
+              {isFullscreen && (
+                <button 
+                  onClick={toggleFullScreen} 
+                  className="btn btn-dark rounded-circle position-absolute" 
+                  style={{ top: '20px', right: '20px', z-index: 1050, width: '48px', height: '48px', opacity: 0.7 }}
+                  aria-label="Close Fullscreen"
+                >
+                  <i className="bi bi-x-lg fs-5"></i>
+                </button>
+              )}
+              <video 
+                ref={videoRef}
+                controls 
+                playsInline 
+                loop 
+                preload="none"
+                className="w-100"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="video-controls-custom mt-3 d-flex justify-content-end gap-3 px-2">
+              <button onClick={toggleFullScreen} className="btn-video-primary">
+                <i className="bi bi-arrows-fullscreen me-2"></i>Fullscreen
+              </button>
+              <button onClick={togglePiP} className="btn-video-action">
+                <i className="bi bi-display me-2"></i>Mini Player
+              </button>
             </div>
           </div>
         </div>
@@ -175,27 +250,6 @@ function App() {
                 <img src="/assets/outboxdatatracking.png" className="img-fluid feature-img main-img" alt="Secure Outbox Data Tracking" />
                 <img src="/assets/reporttemplates.png" className="img-fluid feature-img overlay-img" alt="Report Templates" />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Video Section */}
-      <section id="demo" className="py-5 demo-section">
-        <div className="container-fluid px-4 d-flex justify-content-center">
-          <div style={{ maxWidth: '800px', width: '100%' }}>
-            <h2 className="fw-bold text-center mb-4 section-title">Watch Our Demo</h2>
-            <div className="demo-video-wrapper shadow-lg rounded">
-              <video 
-                ref={videoRef}
-                controls 
-                playsInline 
-                loop 
-                preload="none"
-                className="w-100"
-              >
-                Your browser does not support the video tag.
-              </video>
             </div>
           </div>
         </div>
