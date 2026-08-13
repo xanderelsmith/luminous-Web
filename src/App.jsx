@@ -273,6 +273,22 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* Feature 6: Offline-First Architecture */}
+          <div className="row align-items-center feature-row">
+            <div className="col-lg-6 order-lg-last mb-4 mb-lg-0 feature-text-right">
+              <h3 className="fw-bold feature-heading">Offline-First Architecture</h3>
+              <p className="feature-description">
+                No internet? Server downtime? No problem. Lumiere is natively built with a powerful offline-first architecture. Access patient journals, create reports, and manage your practice continuously—all of your data automatically and securely syncs the moment your connection is restored.
+              </p>
+            </div>
+            <div className="col-lg-6 order-lg-first">
+              <div className="feature-img-wrapper left-align dual-images">
+                <img src="/assets/image2.png" className="img-fluid feature-img main-img" alt="Offline-First Architecture" />
+                <img src="/assets/patient_manager1.png" className="img-fluid feature-img overlay-img" alt="Data Syncing" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
