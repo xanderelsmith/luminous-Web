@@ -41,15 +41,23 @@ function App() {
     };
   }, []);
 
-  const toggleFullScreen = () => {
+  const toggleFullScreen = async () => {
     if (!document.fullscreenElement) {
       if (wrapperRef.current) {
-        wrapperRef.current.requestFullscreen().catch(err => {
+        try {
+          await wrapperRef.current.requestFullscreen();
+          if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
+            await window.screen.orientation.lock('landscape').catch(() => {});
+          }
+        } catch (err) {
           console.error(`Error enabling fullscreen: ${err.message}`);
-        });
+        }
       }
     } else {
       document.exitFullscreen();
+      if (window.screen && window.screen.orientation && window.screen.orientation.unlock) {
+        window.screen.orientation.unlock();
+      }
     }
   };
 
