@@ -161,12 +161,10 @@ function App() {
           <div style={{ maxWidth: '800px', width: '100%' }}>
             <h2 className="fw-bold text-center mb-4 section-title">Watch Our Demo</h2>
             <div className="demo-video-wrapper shadow-lg rounded">
-              <div className="ratio ratio-16x9">
-                <iframe src="https://drive.google.com/file/d/1HF1nU0si4fFQr5x7mI2hM3s_VxX8jpB2/preview"
-                  title="Luminous EHR Demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen></iframe>
-              </div>
+              <iframe src="https://drive.google.com/file/d/1HF1nU0si4fFQr5x7mI2hM3s_VxX8jpB2/preview"
+                title="Luminous EHR Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen></iframe>
             </div>
           </div>
         </div>

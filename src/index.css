@@ -282,20 +282,23 @@ h1, h2, h3, h4, h5, h6, .brand-text {
   background: #fff;
 }
 .demo-video-wrapper {
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1) !important;
-  border: 4px solid #fff;
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #000;
+  border: 4px solid #fff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
-/* Hack to fix Google Drive iframe min-width on mobile */
-@media (max-width: 767px) {
-  .demo-video-wrapper .ratio {
-    width: 200%;
-    height: 200%;
-    zoom: 0.5;
-  }
+.demo-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
 }
 
 /* CTA Section */
