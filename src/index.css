@@ -420,6 +420,15 @@ h6,
   transform: scale(1.05) translate(-10px, -10px);
 }
 
+.dual-images.overlay-left .overlay-img {
+  right: auto;
+  left: -30px;
+}
+
+.dual-images.overlay-left:hover .overlay-img {
+  transform: scale(1.05) translate(10px, -10px);
+}
+
 /* =========================
    Demo Video
 ========================= */
@@ -877,10 +886,15 @@ h6,
   }
 
   .dual-images .overlay-img {
-    right: -10px;
-    bottom: -20px;
+    right: -15px;
+    bottom: -15px;
     width: 55%;
     max-width: 55%;
+  }
+
+  .dual-images.overlay-left .overlay-img {
+    right: auto;
+    left: -15px;
   }
 
   /* =========================

@@ -283,7 +283,7 @@ function App() {
               </p>
             </div>
             <div className="col-lg-6 order-lg-first">
-              <div className="feature-img-wrapper left-align dual-images">
+              <div className="feature-img-wrapper left-align dual-images overlay-left">
                 <img src="/assets/offline_clinician.jpg" className="img-fluid feature-img main-img" alt="Offline-First Architecture" />
                 <img src="/assets/patient_manager1.png" className="img-fluid feature-img overlay-img" alt="Data Syncing" />
               </div>
