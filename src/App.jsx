@@ -1,9 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const currentVideo = videoRef.current;
+    if (!currentVideo) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!currentVideo.src) {
+              currentVideo.src = "/assets/luminous_web.mp4";
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(currentVideo);
+
+    return () => {
+      observer.unobserve(currentVideo);
+    };
+  }, []);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
@@ -157,14 +182,20 @@ function App() {
 
       {/* Demo Video Section */}
       <section id="demo" className="py-5 demo-section">
-        <div className="container d-flex justify-content-center">
+        <div className="container-fluid px-4 d-flex justify-content-center">
           <div style={{ maxWidth: '800px', width: '100%' }}>
             <h2 className="fw-bold text-center mb-4 section-title">Watch Our Demo</h2>
             <div className="demo-video-wrapper shadow-lg rounded">
-              <iframe src="https://drive.google.com/file/d/1HF1nU0si4fFQr5x7mI2hM3s_VxX8jpB2/preview"
-                title="Luminous EHR Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
+              <video 
+                ref={videoRef}
+                controls 
+                playsInline 
+                loop 
+                preload="none"
+                className="w-100"
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

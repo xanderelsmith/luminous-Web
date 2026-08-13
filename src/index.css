@@ -429,36 +429,26 @@ h6,
   overflow: hidden;
 }
 
-/*
-   IMPORTANT:
-   Use aspect-ratio only.
-   Do NOT combine it with padding-top
-   or height: 0.
-*/
+/* Native HTML5 Video Wrapper */
 
 .demo-video-wrapper {
   position: relative;
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 24px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
   border: 4px solid #fff;
   box-sizing: border-box;
   background: #000;
+  display: flex;
 }
 
-.demo-video-wrapper iframe,
-.demo-video-wrapper embed,
-.demo-video-wrapper object,
-.demo-video-wrapper .ratio {
-  position: absolute;
-  inset: 0;
+.demo-video-wrapper video {
   width: 100%;
-  height: 100%;
-  border: 0;
+  height: auto;
   display: block;
+  border-radius: 20px; /* Inside border radius */
 }
 
 @media (min-width: 992px) {
@@ -705,17 +695,12 @@ h6,
     line-height: 1.6;
   }
 
-  /*
-     Clean 16:9 mobile video.
-     No padding-top.
-     No height: 0.
-  */
+  /* Mobile HTML5 video container */
 
   .demo-video-wrapper {
     width: 100%;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
     padding: 0;
     max-height: none;
     border-radius: 16px;
@@ -724,14 +709,8 @@ h6,
     box-sizing: border-box;
   }
 
-  .demo-video-wrapper iframe,
-  .demo-video-wrapper embed,
-  .demo-video-wrapper object,
-  .demo-video-wrapper .ratio {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+  .demo-video-wrapper video {
+    border-radius: 12px;
   }
 
   /* =========================
