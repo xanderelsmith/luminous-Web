@@ -136,7 +136,7 @@ function App() {
                 <button 
                   onClick={toggleFullScreen} 
                   className="btn btn-dark rounded-circle position-absolute" 
-                  style={{ top: '20px', right: '20px', z-index: 1050, width: '48px', height: '48px', opacity: 0.7 }}
+                  style={{ top: '20px', right: '20px', zIndex: 1050, width: '48px', height: '48px', opacity: 0.7 }}
                   aria-label="Close Fullscreen"
                 >
                   <i className="bi bi-x-lg fs-5"></i>
