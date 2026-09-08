@@ -390,14 +390,14 @@ function App() {
             </div>
             <div className="col-md-4 mb-4 mb-md-0 d-flex justify-content-center">
               <div className="footer-socials d-flex gap-3">
-                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp" aria-label="WhatsApp">
+                <a href="https://wa.me/2349132915850" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp" aria-label="WhatsApp">
                   <i className="bi bi-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/luminousehr/" target="_blank" rel="noopener noreferrer" className="social-btn facebook" aria-label="Facebook">
+                  <i className="bi bi-facebook"></i>
                 </a>
                 <a href="mailto:hello@luminous.com" className="social-btn email" aria-label="Email">
                   <i className="bi bi-envelope-fill"></i>
-                </a>
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="social-btn twitter" aria-label="Twitter">
-                  <i className="bi bi-twitter-x"></i>
                 </a>
                 <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-btn linkedin" aria-label="LinkedIn">
                   <i className="bi bi-linkedin"></i>
