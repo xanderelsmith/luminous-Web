@@ -396,11 +396,8 @@ function App() {
                 <a href="https://www.facebook.com/luminousehr/" target="_blank" rel="noopener noreferrer" className="social-btn facebook" aria-label="Facebook">
                   <i className="bi bi-facebook"></i>
                 </a>
-                <a href="mailto:hello@luminous.com" className="social-btn email" aria-label="Email">
+                <a href="mailto:luminousehr@gmail.com" className="social-btn email" aria-label="Email">
                   <i className="bi bi-envelope-fill"></i>
-                </a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-btn linkedin" aria-label="LinkedIn">
-                  <i className="bi bi-linkedin"></i>
                 </a>
               </div>
             </div>
