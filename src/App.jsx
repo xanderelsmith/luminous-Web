@@ -305,7 +305,7 @@ function App() {
                   <p className="card-subtitle text-muted">For privacy-conscious solo practitioners</p>
                   <div className="price-block">
                     <span className="price-main">N300,000</span>
-                    <span className="price-strike text-muted text-decoration-line-through">N600,000</span>
+                    <span className="price-strike text-muted"><s>N600,000</s></span>
                     <div className="price-period text-muted">one-time</div>
                   </div>
                   <ul className="list-unstyled feature-list">
@@ -328,7 +328,7 @@ function App() {
                   <p className="card-subtitle text-muted">Cloud backups and AI convenience</p>
                   <div className="price-block">
                     <span className="price-main">N25,000</span>
-                    <span className="price-strike text-muted text-decoration-line-through">N50,000</span>
+                    <span className="price-strike text-muted"><s>N50,000</s></span>
                     <div className="price-period text-muted">per month</div>
                   </div>
                   <ul className="list-unstyled feature-list">
@@ -350,7 +350,7 @@ function App() {
                   <p className="card-subtitle text-muted">For multi-doctor clinics</p>
                   <div className="price-block">
                     <span className="price-main">N55,000</span>
-                    <span className="price-strike text-muted text-decoration-line-through">N110,000</span>
+                    <span className="price-strike text-muted"><s>N110,000</s></span>
                     <div className="price-period text-muted">per month</div>
                   </div>
                   <ul className="list-unstyled feature-list">
