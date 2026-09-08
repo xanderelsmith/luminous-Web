@@ -292,6 +292,82 @@ function App() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="py-5 pricing-section">
+        <div className="container">
+          <div className="row justify-content-center align-items-center g-4">
+            
+            {/* Card 1 */}
+            <div className="col-lg-4 col-md-6">
+              <div className="pricing-card card-green">
+                <div className="card-body p-0 d-flex flex-column h-100">
+                  <h4 className="fw-bold card-title">Lifetime Professional</h4>
+                  <p className="card-subtitle text-muted">For privacy-conscious solo practitioners</p>
+                  <div className="price-block">
+                    <span className="price-main">N300,000</span>
+                    <span className="price-strike text-muted text-decoration-line-through">N600,000</span>
+                    <div className="price-period text-muted">one-time</div>
+                  </div>
+                  <ul className="list-unstyled feature-list">
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Unlimited Patients & Appts</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Local Database storage</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Bring Your Own Key (BYOK)</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> 14-Day Free Trial</li>
+                  </ul>
+                  <button className="btn w-100 btn-pricing mt-auto" onClick={openModal}>Activate Plan</button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="col-lg-4 col-md-6">
+              <div className="pricing-card card-popular shadow-lg position-relative">
+                <span className="badge-popular">MOST POPULAR</span>
+                <div className="card-body p-0 d-flex flex-column h-100">
+                  <h4 className="fw-bold card-title">Solo Cloud Pro</h4>
+                  <p className="card-subtitle text-muted">Cloud backups and AI convenience</p>
+                  <div className="price-block">
+                    <span className="price-main">N25,000</span>
+                    <span className="price-strike text-muted text-decoration-line-through">N50,000</span>
+                    <div className="price-period text-muted">per month</div>
+                  </div>
+                  <ul className="list-unstyled feature-list">
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Automatic Cloud Sync</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Hosted AI Generation</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Cloud Data Restoration</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Standard Email Support</li>
+                  </ul>
+                  <button className="btn w-100 btn-pricing mt-auto" onClick={openModal}>Activate Plan</button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="col-lg-4 col-md-6">
+              <div className="pricing-card card-standard">
+                <div className="card-body p-0 d-flex flex-column h-100">
+                  <h4 className="fw-bold card-title">Clinic Collaborative</h4>
+                  <p className="card-subtitle text-muted">For multi-doctor clinics</p>
+                  <div className="price-block">
+                    <span className="price-main">N55,000</span>
+                    <span className="price-strike text-muted text-decoration-line-through">N110,000</span>
+                    <div className="price-period text-muted">per month</div>
+                  </div>
+                  <ul className="list-unstyled feature-list">
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Multi-user Clinic Sync</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Automated WhatsApp DMs</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Advanced AI Reporting</li>
+                    <li><i className="bi bi-check-circle-fill text-success"></i> Edoc Mobile Integration</li>
+                  </ul>
+                  <button className="btn w-100 btn-pricing mt-auto" onClick={openModal}>Activate Plan</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action Section */}
       <section id="cta" className="cta-section">
         <div className="cta-content glass-card">
