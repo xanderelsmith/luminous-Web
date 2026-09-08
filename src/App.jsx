@@ -307,6 +307,7 @@ function App() {
                     <span className="price-main">N300,000</span>
                     <span className="price-strike text-muted"><s>N600,000</s></span>
                     <div className="price-period text-muted">one-time</div>
+                    <div className="text-danger fw-bold mt-2" style={{ fontSize: '0.85rem', letterSpacing: '0.5px' }}>FOR NEXT 10 SLOTS</div>
                   </div>
                   <ul className="list-unstyled feature-list">
                     <li><i className="bi bi-check-circle-fill text-success"></i> Unlimited Patients & Appts</li>
@@ -379,12 +380,34 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container d-flex justify-content-between align-items-center">
-          <div className="footer-brand d-flex align-items-center">
-            <img src="/assets/appicon.png" alt="Icon" width="24" height="24" className="me-2" style={{ opacity: 0.8 }} />
-            Luminous EHR
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-4 mb-4 mb-md-0 d-flex justify-content-center justify-content-md-start">
+              <div className="footer-brand d-flex align-items-center">
+                <img src="/assets/appicon.png" alt="Icon" width="24" height="24" className="me-2" style={{ opacity: 0.8 }} />
+                Luminous EHR
+              </div>
+            </div>
+            <div className="col-md-4 mb-4 mb-md-0 d-flex justify-content-center">
+              <div className="footer-socials d-flex gap-3">
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp" aria-label="WhatsApp">
+                  <i className="bi bi-whatsapp"></i>
+                </a>
+                <a href="mailto:hello@luminous.com" className="social-btn email" aria-label="Email">
+                  <i className="bi bi-envelope-fill"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="social-btn twitter" aria-label="Twitter">
+                  <i className="bi bi-twitter-x"></i>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-btn linkedin" aria-label="LinkedIn">
+                  <i className="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex justify-content-center justify-content-md-end">
+              <div className="footer-copyright text-muted">&copy; 2024. All rights reserved.</div>
+            </div>
           </div>
-          <div className="footer-copyright">&copy; 2024. All rights reserved.</div>
         </div>
       </footer>
 

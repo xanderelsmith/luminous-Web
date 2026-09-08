@@ -1097,3 +1097,57 @@ h6,
   color: #16a34a;
 }
 
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+  padding: 40px 0;
+  background-color: #fff;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.footer-socials .social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-socials .social-btn:hover {
+  transform: translateY(-3px);
+}
+
+.footer-socials .social-btn.whatsapp:hover {
+  background-color: #25D366;
+  color: #fff;
+}
+
+.footer-socials .social-btn.email:hover {
+  background-color: #ea4335;
+  color: #fff;
+}
+
+.footer-socials .social-btn.twitter:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+.footer-socials .social-btn.linkedin:hover {
+  background-color: #0077b5;
+  color: #fff;
+}
